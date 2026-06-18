@@ -1,34 +1,72 @@
 const taskInput = document.getElementById("taskInput");
 const addBtn = document.getElementById("addBtn");
 const taskList = document.getElementById("taskList");
+const taskCounter = document.getElementById("taskCounter");
+
+function updateCounter() {
+    const total =
+        document.querySelectorAll("#taskList li").length;
+
+    const completed =
+        document.querySelectorAll("#taskList li.completed").length;
+
+    taskCounter.textContent =
+        `Total: ${total} | Completed: ${completed}`;
+}
 
 function saveTasks() {
     localStorage.setItem("tasks", taskList.innerHTML);
+    updateCounter();
 }
 
-function loadTasks() {
-    taskList.innerHTML = localStorage.getItem("tasks") || "";
+function addEvents(task) {
 
-    const tasks = document.querySelectorAll("#taskList li");
+    task.addEventListener("click", function () {
+        task.classList.toggle("completed");
+        saveTasks();
+    });
 
-    tasks.forEach(task => {
+    const editBtn = task.querySelector(".editBtn");
 
-        task.addEventListener("click", function () {
-            this.classList.toggle("completed");
+    editBtn.addEventListener("click", function (event) {
+        event.stopPropagation();
+
+        const span = task.querySelector("span");
+
+        const newTask =
+            prompt("Edit your task:", span.textContent);
+
+        if (newTask !== null && newTask.trim() !== "") {
+            span.textContent = newTask;
             saveTasks();
-        });
+        }
+    });
 
-        const deleteBtn = task.querySelector(".deleteBtn");
+    const deleteBtn = task.querySelector(".deleteBtn");
 
-        deleteBtn.addEventListener("click", function (event) {
-            event.stopPropagation();
-            task.remove();
-            saveTasks();
-        });
+    deleteBtn.addEventListener("click", function (event) {
+        event.stopPropagation();
+
+        task.remove();
+        saveTasks();
     });
 }
 
-addBtn.addEventListener("click", function () {
+function loadTasks() {
+    taskList.innerHTML =
+        localStorage.getItem("tasks") || "";
+
+    const tasks =
+        document.querySelectorAll("#taskList li");
+
+    tasks.forEach(task => {
+        addEvents(task);
+    });
+
+    updateCounter();
+}
+
+function addTask() {
 
     const task = taskInput.value.trim();
 
@@ -41,26 +79,28 @@ addBtn.addEventListener("click", function () {
 
     li.innerHTML = `
         <span>${task}</span>
-        <button class="deleteBtn">Delete</button>
+
+        <div class="task-buttons">
+            <button class="editBtn">Edit</button>
+            <button class="deleteBtn">Delete</button>
+        </div>
     `;
 
     taskList.appendChild(li);
 
-    li.addEventListener("click", function () {
-        li.classList.toggle("completed");
-        saveTasks();
-    });
-
-    const deleteBtn = li.querySelector(".deleteBtn");
-
-    deleteBtn.addEventListener("click", function (event) {
-        event.stopPropagation();
-        li.remove();
-        saveTasks();
-    });
+    addEvents(li);
 
     saveTasks();
+
     taskInput.value = "";
+}
+
+addBtn.addEventListener("click", addTask);
+
+taskInput.addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+        addTask();
+    }
 });
 
 loadTasks();

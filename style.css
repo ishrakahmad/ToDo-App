@@ -6,7 +6,7 @@
 }
 
 body {
-    background: #f4f7fc;
+    background: #e5e7eb;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,61 +15,70 @@ body {
 
 .container {
     background: white;
-    width: 450px;
-    padding: 30px;
-    border-radius: 15px;
+    width: 500px;
+    padding: 35px;
+    border-radius: 20px;
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
-.input-section {
+.input-area {
     display: flex;
     gap: 10px;
-    margin-bottom: 25px;
 }
 
 input {
     flex: 1;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    outline: none;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
     font-size: 16px;
 }
 
 button {
-    background: #007bff;
-    color: white;
-    border: none;
     padding: 12px 18px;
-    border-radius: 8px;
+    border: none;
+    background: #0d6efd;
+    color: white;
+    border-radius: 10px;
     cursor: pointer;
-    font-size: 15px;
 }
 
 button:hover {
-    background: #0056b3;
+    background: #0b5ed7;
 }
 
-ul {
+#taskCounter {
+    margin-top: 25px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#taskList {
     list-style: none;
 }
 
-li {
-    background: #f8f9fa;
-    padding: 12px;
-    border-radius: 8px;
-    margin-bottom: 12px;
+#taskList li {
+    background: #f3f4f6;
+    padding: 18px;
+    margin-bottom: 15px;
+    border-radius: 10px;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     cursor: pointer;
+}
+
+.task-buttons {
+    display: flex;
+    gap: 10px;
 }
 
 .completed {
