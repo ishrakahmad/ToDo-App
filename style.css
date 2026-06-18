@@ -14,34 +14,37 @@ body {
 }
 
 .container {
+    width: 700px;
     background: white;
-    width: 500px;
     padding: 35px;
     border-radius: 20px;
-    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
 
 h1 {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .input-area {
     display: flex;
     gap: 10px;
+    margin-bottom: 20px;
 }
 
-input {
-    flex: 1;
-    padding: 15px;
+.input-area input {
+    padding: 12px;
     border: 1px solid #ccc;
     border-radius: 10px;
-    font-size: 16px;
+}
+
+#taskInput {
+    flex: 1;
 }
 
 button {
-    padding: 12px 18px;
     border: none;
+    padding: 12px 18px;
     background: #0d6efd;
     color: white;
     border-radius: 10px;
@@ -53,10 +56,35 @@ button:hover {
 }
 
 #taskCounter {
-    margin-top: 25px;
-    margin-bottom: 15px;
     text-align: center;
+    margin-bottom: 20px;
     font-weight: bold;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.filters,
+.top-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.filters button,
+.top-buttons button {
+    flex: 1;
+}
+
+#emptyMessage {
+    text-align: center;
+    color: gray;
+    margin-bottom: 20px;
 }
 
 #taskList {
@@ -64,16 +92,23 @@ button:hover {
 }
 
 #taskList li {
-    background: #f3f4f6;
-    padding: 18px;
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 12px;
     margin-bottom: 15px;
-    border-radius: 10px;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
 
-    cursor: pointer;
+.task-info h3 {
+    margin-bottom: 8px;
+}
+
+.task-info small {
+    color: gray;
+    display: block;
 }
 
 .task-buttons {
@@ -81,7 +116,30 @@ button:hover {
     gap: 10px;
 }
 
-.completed {
+.completed h3 {
     text-decoration: line-through;
     opacity: 0.6;
+}
+
+.dark {
+    background: #121212;
+}
+
+.dark .container {
+    background: #1f1f1f;
+    color: white;
+}
+
+.dark input {
+    background: #2b2b2b;
+    color: white;
+    border: none;
+}
+
+.dark #taskList li {
+    background: #2b2b2b;
+}
+
+.dark small {
+    color: #ccc;
 }

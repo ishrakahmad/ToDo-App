@@ -8,24 +8,52 @@
 </head>
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <h1>📝 ToDo App</h1>
+    <h1>📝 ToDo App</h1>
 
-        <div class="input-area">
-            <input type="text" id="taskInput" placeholder="Enter a task...">
-            <button id="addBtn">Add</button>
-        </div>
+    <div class="input-area">
+        <input
+            type="text"
+            id="taskInput"
+            placeholder="Enter a task..."
+        >
 
-        <div id="taskCounter">
-            Total: 0 | Completed: 0
-        </div>
+        <input type="date" id="dueDate">
 
-        <ul id="taskList"></ul>
-
+        <button id="addBtn">Add</button>
     </div>
 
-    <script src="script.js"></script>
+    <div id="taskCounter">
+        Total: 0 | Completed: 0
+    </div>
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="🔍 Search Task..."
+    >
+
+    <div class="filters">
+        <button id="allBtn">All</button>
+        <button id="activeBtn">Active</button>
+        <button id="completedBtn">Completed</button>
+    </div>
+
+    <div class="top-buttons">
+        <button id="darkBtn">🌙 Dark Mode</button>
+        <button id="clearBtn">🗑️ Clear All</button>
+    </div>
+
+    <p id="emptyMessage">
+        No tasks yet. Add your first task! 🚀
+    </p>
+
+    <ul id="taskList"></ul>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
