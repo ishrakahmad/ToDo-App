@@ -18,4 +18,5 @@ Features:
 - Sort by Due Date
 ## Screenshot
 
-![ToDo App Screenshot](tododark.png)
+![ToDo App Screenshot](<img width="997" height="845" alt="tododark" src="https://github.com/user-attachments/assets/d277056b-40bc-47a4-beab-7dc5ad624ede" />
+)
