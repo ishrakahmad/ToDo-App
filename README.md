@@ -16,3 +16,6 @@ Features:
 - Categories
 - Sort by Priority
 - Sort by Due Date
+## Screenshot
+
+![ToDo App Screenshot](tododark.png)
