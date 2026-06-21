@@ -1,24 +1,29 @@
-# ToDo App V6
+# 📝 ToDo App V7
 
 ## An advanced ToDo application built with HTML, CSS and JavaScript. It supports task management with priorities, categories, due dates, search, sorting, dark mode and local storage.
 
+## ✨ Features
+- ➕ Add Tasks
+- ✏️ Edit Tasks
+- 🗑️ Delete Tasks
+- ✅ Mark Tasks as Completed
+- 📊 Dashboard (Total, Completed, Pending, Overdue)
+- 📈 Progress Bar
+- 🔍 Search Tasks
+- 🌙 Dark Mode
+- 🔥 Sort by Priority
+- 📅 Sort by Due Date
+- ⭐ Favorite Tasks
+- 📌 Pin Tasks
+- 💾 Local Storage Support
+- 📱 Responsive Design (Mobile & Desktop)
 
-Features:
-- Add Task
-- Edit Task
-- Delete Task
-- Mark as Completed
-- Local Storage
-- Search Tasks
-- Filter Tasks
-- Dark Mode
-- Progress Bar
-- Task Counter
-- Due Date
-- Priority Levels
-- Categories
-- Sort by Priority
-- Sort by Due Date
+## 🛠️ Technologies Used
+- HTML5
+- CSS3
+- JavaScript (ES6)
+
+
 ## Screenshot
 ![ToDo App Screenshot](tododark.png)
 
