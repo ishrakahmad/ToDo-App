@@ -223,7 +223,7 @@ select:focus {
 .card {
     background: #ffffff;
     border-radius: 15px;
-    padding: 20px;
+    padding: 15px;
     text-align: center;
     box-shadow: 0 5px 15px rgba(0,0,0,.1);
 }
@@ -268,6 +268,10 @@ select:focus {
     .container {
         padding: 20px;
     }
+    
+    h1 {
+        font-size: 2rem;
+    }
 
     .top,
     .filters,
@@ -301,6 +305,8 @@ select:focus {
     }
 
     .task-buttons button {
+        padding: 10px;
+        font-size: 14px;
         flex: 1;
     }
 }
