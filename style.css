@@ -259,74 +259,48 @@ select:focus {
 }
 
 
-
-@media (max-width: 768px) {
-
-    .top,
-    .filters,
-    .actions,
-    .sort-buttons,
-    #taskList li {
-        flex-direction: column;
-    }
-
-    .top input,
-    .top select,
-    .top button,
-    .filters button,
-    .actions button,
-    .sort-buttons button {
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .dashboard {
-        grid-template-columns: 1fr;
-    }
-
-    .task-buttons {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        justify-content: center;
-    }
-}
-
-
-
-
 @media (max-width: 768px) {
 
     body {
         padding: 15px;
     }
 
+    .container {
+        padding: 20px;
+    }
+
     .top,
     .filters,
     .actions,
-    .sort-buttons,
-    #taskList li {
-        flex-direction: column;
+    .sort-buttons {
+        flex-wrap: wrap;
+        gap: 10px;
     }
 
     .top input,
     .top select,
-    .top button,
-    .filters button,
-    .actions button,
-    .sort-buttons button {
+    .top button {
         width: 100%;
-        box-sizing: border-box;
     }
 
     .dashboard {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #taskList li {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .task-buttons {
+        margin-top: 15px;
+        width: 100%;
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
-        justify-content: center;
+    }
+
+    .task-buttons button {
+        flex: 1;
     }
 }
