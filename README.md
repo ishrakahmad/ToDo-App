@@ -25,7 +25,7 @@
 
 
 ## Screenshot
-![ToDo App Screenshot](tododark.png)
+![ToDo App Screenshot](ToDo V7.png)
 
 ## Live Demo:
 https://ishrakahmad.github.io/ToDo-App/
