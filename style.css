@@ -5,12 +5,13 @@ body {
     justify-content: center;
     padding: 50px;
 }
-
 .container {
-    width: 800px;
+    width: 100%;
+    max-width: 800px;
     background: white;
     padding: 30px;
     border-radius: 20px;
+    box-sizing: border-box;
 }
 
 h1 {
@@ -255,4 +256,77 @@ select:focus {
     padding: 15px 25px;
     border-radius: 12px;
     display: none;
+}
+
+
+
+@media (max-width: 768px) {
+
+    .top,
+    .filters,
+    .actions,
+    .sort-buttons,
+    #taskList li {
+        flex-direction: column;
+    }
+
+    .top input,
+    .top select,
+    .top button,
+    .filters button,
+    .actions button,
+    .sort-buttons button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .task-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+}
+
+
+
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .top,
+    .filters,
+    .actions,
+    .sort-buttons,
+    #taskList li {
+        flex-direction: column;
+    }
+
+    .top input,
+    .top select,
+    .top button,
+    .filters button,
+    .actions button,
+    .sort-buttons button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .task-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
 }
