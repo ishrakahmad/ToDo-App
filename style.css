@@ -210,3 +210,49 @@ select:focus {
     min-height: 50px;
     font-size: 16px;
 }
+
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
+}
+
+.dark .card {
+    background: #2c2c2c;
+}
+
+.card h3 {
+    font-size: 30px;
+    color: #2563eb;
+}
+
+.card p {
+    margin-top: 8px;
+}
+
+
+.favorite {
+    border-left: 8px solid gold;
+}
+
+
+#toast {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    background: #2563eb;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 12px;
+    display: none;
+}

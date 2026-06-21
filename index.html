@@ -36,9 +36,37 @@
         Total: 0 | Completed: 0
     </h3>
 
+
+    <div class="dashboard">
+
+        <div class="card">
+            <h3 id="totalCard">0</h3>
+            <p>Total</p>
+        </div>
+    
+        <div class="card">
+            <h3 id="completedCard">0</h3>
+            <p>Completed</p>
+        </div>
+    
+        <div class="card">
+            <h3 id="pendingCard">0</h3>
+            <p>Pending</p>
+        </div>
+    
+        <div class="card">
+            <h3 id="overdueCard">0</h3>
+            <p>Overdue</p>
+        </div>
+    
+    </div>
+    
     <div class="progress-container">
         <div id="progressBar"></div>
     </div>
+
+
+    
 
     <p id="progressText">
         0% Completed
@@ -74,6 +102,9 @@
                 📅 Sort By Due Date
             </button>
         
+
+          
+
         </div>    
     </div>
 
@@ -82,6 +113,7 @@
 </div>
 
 <script src="script.js"></script>
+<div id="toast"></div>
 
 </body>
 </html>

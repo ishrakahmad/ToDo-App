@@ -24,9 +24,30 @@ function loadTasks() {
         updateCounter();
         updateProgress();
         checkOverdue();
+        updateDashboard();
+        
 
 }
 
+function showToast(text) {
+
+    const toast =
+        document.getElementById(
+            "toast"
+        );
+
+    toast.innerText = text;
+
+    toast.style.display =
+        "block";
+
+    setTimeout(() => {
+
+        toast.style.display =
+            "none";
+
+    }, 2000);
+}
 
 function checkOverdue() {
 
@@ -75,6 +96,45 @@ function attachEvents() {
             }
         );
 
+
+        const favBtn =
+    li.querySelector(".favBtn");
+
+if (favBtn) {
+
+    favBtn.onclick =
+        function (e) {
+
+            e.stopPropagation();
+
+            li.classList.toggle(
+                "favorite"
+            );
+
+            saveTasks();
+            showToast("⭐ Added to Favorite");
+        };
+}
+
+
+const pinBtn =
+    li.querySelector(".pinBtn");
+
+    
+
+if (pinBtn) {
+
+    pinBtn.onclick = function (e) {
+
+        e.stopPropagation();
+
+        taskList.prepend(li);
+
+        saveTasks();
+
+        showToast("📌 Task Pinned");
+    };
+}
         const deleteBtn =
             li.querySelector(".deleteBtn");
 
@@ -87,6 +147,7 @@ function attachEvents() {
                 saveTasks();
                 updateCounter();
                 updateProgress();
+                showToast("🗑️ Task Deleted");
             };
         }
 
@@ -173,14 +234,25 @@ addBtn.addEventListener(
 
             <br>
 
-            <small>
-                Due:
-                ${dueDate.value || "None"}
-            </small>
+            <small
+    class="dueDate"
+    data-date="${dueDate.value}"
+>
+    Due:
+    ${dueDate.value || "None"}
+</small>
 
         </div>
 
         <div class="task-buttons">
+
+            <button class="favBtn">
+              ⭐
+             </button>
+
+              <button class="pinBtn">
+                 📌
+           </button>
 
             <button class="editBtn">
                 Edit
@@ -204,6 +276,8 @@ addBtn.addEventListener(
         attachEvents();
         updateCounter();
         updateProgress();
+        showToast("✅ Task Added");
+
     }
 );
 
@@ -443,3 +517,61 @@ document.getElementById(
 
     saveTasks();
 };
+
+
+
+function updateDashboard() {
+
+    const tasks =
+        document.querySelectorAll("#taskList li");
+
+    const completed =
+        document.querySelectorAll(
+            ".completed"
+        ).length;
+
+    const total =
+        tasks.length;
+
+    const pending =
+        total - completed;
+
+    let overdue = 0;
+
+    tasks.forEach(li => {
+
+        const due =
+            li.querySelector(".dueDate");
+
+        if (!due) return;
+
+        const date =
+            due.dataset.date;
+
+        if (
+            date &&
+            new Date(date) < new Date() &&
+            !li.classList.contains(
+                "completed"
+            )
+        ) {
+            overdue++;
+        }
+    });
+
+    document.getElementById(
+        "totalCard"
+    ).innerText = total;
+
+    document.getElementById(
+        "completedCard"
+    ).innerText = completed;
+
+    document.getElementById(
+        "pendingCard"
+    ).innerText = pending;
+
+    document.getElementById(
+        "overdueCard"
+    ).innerText = overdue;
+}
