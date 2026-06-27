@@ -1,6 +1,6 @@
 # 📝 ToDo App V7
 
-## An advanced ToDo application built with HTML, CSS and JavaScript. It supports task management with priorities, categories, due dates, search, sorting, dark mode and local storage.
+## An advanced ToDo application built with HTML, CSS and JavaScript. It supports task management with priorities, categories, due dates, search, sorting, dark mode and local storage..
 
 ## ✨ Features
 - ➕ Add Tasks
